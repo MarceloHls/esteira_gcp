@@ -23,5 +23,7 @@ jobs:
     - name: Execute test Python  
       env: 
         GOOGLE_APPLICATION_CREDENTIALS: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
-      run: python execute_bigquery/teste.py
+      run: 
+        pip install -r requirements.txt
+        python execute_bigquery/teste.py
 
