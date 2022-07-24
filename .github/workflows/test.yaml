@@ -12,6 +12,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+
+    - name: Create varible script
+      env :
+        GOOGLE_APPLICATION_CREDENTIALS: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
+
+        
     - name: Set up Python 3.10
       uses: actions/setup-python@v3
       with:
