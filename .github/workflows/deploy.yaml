@@ -22,6 +22,7 @@ jobs:
         GOOGLE_APPLICATION_CREDENTIALS: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
       run : 
         pip install -r requirements.txt
-        python3 execute_bigquery/main.py
+        cd execute_bigquery
+        python3 main.py
 
       
