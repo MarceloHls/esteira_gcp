@@ -21,5 +21,7 @@ jobs:
         python-version: "3.10"
         architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
     - name: Execute test Python  
+      env: 
+        GOOGLE_APPLICATION_CREDENTIALS: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
       run: python execute_bigquery/teste.py
 
