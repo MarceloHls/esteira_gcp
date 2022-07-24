@@ -13,7 +13,6 @@ class ExecuteBiqguery():
                 ):
 
         self.client= client
-        self.credential_path= credential_path
         self.path_files= path_files
         self.project= project
         self.dataset= dataset
