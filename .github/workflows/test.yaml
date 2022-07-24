@@ -1,16 +1,20 @@
-name: Deploy 
+name: Test
 
 on:
-  push:
+  pull_request:
     branches: ['master']
 
 
 jobs:
-  deploy: 
-    name: Deploy to Bigquery
+  test: 
+    name: Test before PRD
     runs-on: ubuntu-latest
 
     steps:
+    - uses: actions/checkout@v3
+
+
+
     - name: Set up Python 3.10
       uses: actions/setup-python@v3
       with:
@@ -19,5 +23,5 @@ jobs:
     - name: Execute test Python  
       env: 
         GOOGLE_APPLICATION_CREDENTIALS: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
-      run: python execute_bigquery/main.py
-      
+      run: python execute_bigquery/teste.py
+
