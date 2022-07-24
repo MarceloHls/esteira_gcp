@@ -11,18 +11,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
     - name: Set up Python 3.10
       uses: actions/setup-python@v3
       with:
         python-version: "3.10"
-
-    - name: Create varible script
-      env :
+        architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
+    - name: Execute test Python  
+      env: 
         GOOGLE_APPLICATION_CREDENTIALS: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
-      run : 
-        pip install -r requirements.txt
-        cd execute_bigquery
-        python3 main.py
-
+      run: python execute_bigquery/main.py
       
