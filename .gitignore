@@ -1,0 +1,3 @@
+credentials/*
+execute_bigquery/__pycache__/
+env_gcp/
